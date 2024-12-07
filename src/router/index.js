@@ -3,10 +3,17 @@ import VueRouter from 'vue-router'
 import Layout from '../views/Layout/index.vue'
 import Login from '../views/Login/Login.vue'
 import Home from '../views/Home/Home.vue'
+/*import OrderBack from "@/views/Order/OrderBack/index.vue";
+import OrderList from "@/views/Order/OrderList/index.vue";*/
 //异步
 const Goods = () => import('../views/Goods/Goods.vue')
 const Params = () => import('../views/Params/Params.vue')
 const Order = () => import('../views/Order/index.vue')
+const OrderList = () => import('../views/Order/OrderList/index.vue')
+const OrderBack = () => import('../views/Order/OrderBack/index.vue')
+
+
+
 Vue.use(VueRouter)
 
 
@@ -16,24 +23,35 @@ const routes = [
         component: Layout,
         children: [
             {
-                path: '/',
+                path: 'home',
                 name: 'Home',
                 component: Home
             },
             {
-                path: '/',
+                path: 'goods',
                 name: 'Goods',
                 component: Goods
             },
             {
-                path: '/',
+                path: 'params',
                 name: 'Params',
                 component: Params
             },
             {
-                path: '/',
+                path: 'order',
                 name: 'Order',
-                component: Order
+                component: Order,
+                redirect: '/order/list',
+                children:[
+                    {
+                        path: 'order-list',
+                        component: OrderList
+                    },
+                    {
+                        path: 'order-back',
+                        component: OrderBack
+                    }
+                ]
             },
 
         ]

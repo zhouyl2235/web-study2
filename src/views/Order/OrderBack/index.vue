@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>首页</h2>
+    <h2>退货</h2>
     <router-view/>
   </div>
 </template>

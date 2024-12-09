@@ -5,8 +5,8 @@ const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost', //数据域名 地址
     user: 'root', //数据名称
-    password: '123456', //数据库密码 xampp集成
-    database: 'test',
+    password: '', //数据库密码 xampp集成
+    database: 'ego',
     port:'3306'
 })
 
@@ -15,9 +15,9 @@ function sqlFn(sql, arr, callback) {
     connection.query(sql, arr, function (error, result) {
         if (error) {
             console.log('数据库语句错误');
-            return callback(error);
+            return ;
         }
-        callback(null, result)
+        callback(result)
     });
 }
 

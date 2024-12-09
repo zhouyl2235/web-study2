@@ -73,14 +73,12 @@ export default {
   margin:20px ;
 }
 .header{
-
   display: flex;
   button{
-    margin:20px;
+    margin-left:20px;
   }
   .wrapper{
     margin:20px 0;
   }
 }
-
 </style>

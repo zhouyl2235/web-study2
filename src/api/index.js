@@ -5,12 +5,16 @@
 import axios from 'axios'
 import base from './base'
 const api ={
-    getGoodsList(){
+        /**
+         * 商品列表
+         */
+        getGoodsList(params){
         return axios.get(base.goodsList,{
-            params:{
-                page:1,
-                pageSize:10
-            }
+            params/*:{
+                /!*page:1,
+                pageSize:10*!/
+            }*/
             })
     }
 }
+export default api

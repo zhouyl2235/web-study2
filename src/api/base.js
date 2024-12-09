@@ -3,10 +3,9 @@
  *一般文件目录：base.js   index.js  mysql.js  router.js  server.js
  * */
 
-
 const base = {
-    goodsList: '/goodsList',
-    goodsInfo: '/goodsInfo',
+    goodsList: 'api/api/goodsList',
+   /* goodsInfo: '/goodsInfo',
     addCart: '/addCart',
     cartList: '/cartList',
     cartDel: '/cartDel',
@@ -18,7 +17,7 @@ const base = {
     userEdit: '/userEdit',
     productList: '/productList',
     productInfo: '/productInfo',
-    productEdit: '/productEdit',
+    productEdit: '/productEdit',*/
 }
 
 export default base;

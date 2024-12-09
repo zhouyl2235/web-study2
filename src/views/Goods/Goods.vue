@@ -55,7 +55,16 @@ export default {
      */
     handleDelete(){},
 
-  }
+  },
+    //生命周期函数
+    created() {
+      this.$api.getGoodsList({
+          page:1
+      })
+              .then(res=>{
+                  console.log(res.data);
+              })
+    }
 }
 </script>
 
@@ -64,6 +73,7 @@ export default {
   margin:20px ;
 }
 .header{
+
   display: flex;
   button{
     margin:20px;

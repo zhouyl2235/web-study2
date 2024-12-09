@@ -9,11 +9,12 @@ const sqlFn = require('./mysql')
  * 参数：page 页码
  */
 router.get('/projectList', (req, res) => {
+    console.log("=============================")
     const page = req.query.page || 1;
     const sqlLen = "select * from project where id";
     sqlFn(sqlLen, null, data => {
         let len = data.length;
-        const sql = "select * from project order by id desc limit 8 offset " + (page - 1) * 8;
+        const sql = "select * from project order by id desc limit 8 " + (page - 1) * 8;
         sqlFn(sql, null, result => {
             if (result.length > 0) {
                 res.send({
